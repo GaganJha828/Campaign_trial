@@ -1,0 +1,605 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Benefits Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #dc6900;
+        }
+
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            background-color: #f5f5f5;
+            border: 2px dashed #D04A02;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+
+        .logo-placeholder {
+            font-size: 12px;
+            color: #D04A02;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .header-content h1 {
+            font-family: Georgia, serif;
+            font-size: 2.5rem;
+            color: #dc6900;
+            margin-bottom: 10px;
+        }
+
+        .header-content p {
+            font-size: 1.1rem;
+            color: #a32020;
+            font-weight: 500;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #D04A02, #eb8c00);
+            border-radius: 12px;
+            color: white;
+        }
+
+        .intro-section h2 {
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(220, 105, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(220, 105, 0, 0.2);
+            border-color: #D04A02;
+        }
+
+        .benefit-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid #eb8c00;
+            position: relative;
+        }
+
+        .benefit-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #dc690020, #eb8c0020);
+        }
+
+        .image-placeholder {
+            font-size: 14px;
+            color: #D04A02;
+            text-align: center;
+            font-weight: bold;
+            z-index: 1;
+            position: relative;
+        }
+
+        .benefit-content {
+            padding: 25px;
+        }
+
+        .benefit-content h3 {
+            font-family: Georgia, serif;
+            font-size: 1.5rem;
+            color: #e0301e;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eb8c00;
+            padding-bottom: 8px;
+        }
+
+        .benefit-content p {
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .benefit-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #e0301e, #a32020);
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .benefit-link:hover {
+            background: linear-gradient(135deg, #a32020, #e0301e);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(224, 48, 30, 0.3);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #000000;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
+
+        .cta-section h2 {
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            color: #eb8c00;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #D04A02, #eb8c00);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #eb8c00, #D04A02);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(220, 105, 0, 0.4);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            border-top: 3px solid #D04A02;
+            text-align: center;
+        }
+
+        footer p {
+            color: #a32020;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .header-content h1 {
+                font-size: 2rem;
+            }
+
+            .intro-section {
+                padding: 20px;
+            }
+
+            .intro-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .benefit-content {
+                padding: 20px;
+            }
+
+            .cta-section {
+                padding: 30px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content h1 {
+                font-size: 1.7rem;
+            }
+
+            .intro-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .benefit-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-placeholder">LOGO<br>HERE</div>
+            </div>
+            <div class="header-content">
+                <h1>Employee Benefits Guide</h1>
+                <p>Supporting You Through Every Life Stage</p>
+            </div>
+        </header>
+
+        <section class="intro-section">
+            <h2>Your Comprehensive Benefits Package</h2>
+            <p>We're committed to supporting our employees with benefits that matter most during important life moments. Explore our policies designed to help you balance work and family life.</p>
+        </section>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-image">
+                    <div class="image-placeholder">MATERNITY LEAVE<br>IMAGE HERE<br>(pregnancy, baby, family)</div>
+                </div>
+                <div class="benefit-content">
+                    <h3>Maternity Leave Benefits</h3>
+                    <p>Comprehensive maternity leave policies designed to support new mothers during this important time. Learn about eligibility, duration, and how to apply for your maternity benefits.</p>
+                    <a href="#maternity-policy" class="benefit-link">View Maternity Policy</a>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-image">
+                    <div class="image-placeholder">NANNY SERVICE<br>IMAGE HERE<br>(childcare, nanny, kids)</div>
+                </div>
+                <div class="benefit-content">
+                    <h3>Nanny Service Benefits</h3>
+                    <p>Professional childcare assistance to help working parents. Discover how our nanny service benefits can provide reliable, quality care for your children.</p>
+                    <a href="#nanny-policy" class="benefit-link">View Nanny Policy</a>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-image">
+                    <div class="image-placeholder">RETENTION RATING<br>IMAGE HERE<br>(career growth, rating)</div>
+                </div>
+                <div class="benefit-content">
+                    <h3>Retention Rating Benefits</h3>
+                    <p>Understanding how your performance and tenure contribute to additional benefits and career development opportunities within our organization.</p>
+                    <a href="#retention-policy" class="benefit-link">View Retention Policy</a>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-image">
+                    <div class="image-placeholder">TRAVEL BENEFITS<br>IMAGE HERE<br>(travel, airplane, vacation)</div>
+                </div>
+                <div class="benefit-content">
+                    <h3>Travel Benefits</h3>
+                    <p>Explore our travel benefit programs, including family travel allowances and special provisions for new parents who need to travel for family reasons.</p>
+                    <a href="#travel-policy" class="benefit-link">View Travel Policy</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2>Questions About Your Benefits?</h2>
+            <p>Our HR team is here to help you understand and make the most of your employee benefits package.</p>
+            <a href="#contact-hr" class="cta-button">Contact HR Support</a>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Employee Benefits Guide. For internal use only.</p>
+        </footer>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Benefits</title>
+  <style>
+    :root {
+      --dark-orange: #d04a02;
+      --tangerine: #eb8c00;
+      --red: #e0301e;
+      --black: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--dark-orange), var(--tangerine));
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .logo-space {
+      width: 120px;
+      height: 40px;
+      background-color: #fff;
+      margin-right: 1.5rem;
+    }
+
+    .title {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+    }
+
+    .intro h2 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--dark-orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0 1rem 4rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    @media (min-width: 768px) {
+      .benefit-section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      border: 1px solid var(--black);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #eee;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .card-body h3 {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--red);
+      margin: 0.5rem 0;
+    }
+
+    .card-body p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-body a {
+      align-self: flex-start;
+      text-decoration: none;
+      background-color: var(--dark-orange);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .card-body a:hover {
+      background-color: var(--tangerine);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid #ddd;
+    }
+    .benefits-help {
+      background-color: var(--black);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .benefits-help h2 {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--tangerine);
+      margin-bottom: 1rem;
+    }
+
+    .benefits-help p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1rem;
+      padding: 0 1rem 1.5rem;
+    }
+
+    .help-button {
+      background: linear-gradient(to right, var(--dark-orange), var(--tangerine));
+      color: white;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .help-button:hover {
+      background: linear-gradient(to right, var(--tangerine), var(--red));
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-space" id="logo">
+        <img src="public/images/pwc.jpg" alt="Logo" style="height: 100%; width: auto;" />
+    </div>
+    <div class="title">Know Your Employee Benefits</div>
+  </header>
+
+  <section class="intro">
+    <h2>Your Benefits, Simplified</h2>
+    <p>Explore essential policies that support you at every stage—whether you're starting a family, traveling, or growing in your role. Click on each to learn more.</p>
+  </section>
+
+  <section class="benefit-section">
+    <div class="card">
+      <img src="public/images/maternity.jpg" alt="Maternity Leave">
+      <div class="card-body">
+        <h3>Maternity Leave Policy</h3>
+        <p>Understand your entitlements and support options during maternity. Includes leave duration, pay, and more.</p>
+        <a href="https://example.com/maternity">Read Policy</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="public/images/babysit.jpg" alt="Nanny Services">
+      <div class="card-body">
+        <h3>Nanny Services</h3>
+        <p>Learn how to access trusted childcare through the company-supported nanny service for working parents.</p>
+        <a href="https://example.com/nanny">Read Policy</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="public/images/rating.jpg" alt="Retain Rating">
+      <div class="card-body">
+        <h3>Retain Rating Benefit</h3>
+        <p>Your performance doesn't get lost during leave. Here's how ratings are preserved and progression is protected.</p>
+        <a href="https://example.com/retain">Read Policy</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="public/images/cab.jpg" alt="Travel Benefits">
+      <div class="card-body">
+        <h3>Travel Benefits</h3>
+        <p>Explore travel reimbursements and safe transit policies—especially useful for new mothers and field workers.</p>
+        <a href="https://example.com/travel">Read Policy</a>
+      </div>
+    </div>
+  </section>
+  <section class="benefits-help">
+    <h2>Need Help Understanding Your Benefits?</h2>
+    <p>We are here to support you. Whether you're navigating leave, travel, or childcare policies, our HR team is happy to assist.</p>
+    <a href="mailto:hr@yourcompany.com" class="help-button">Contact HR Support</a>
+  </section>
+
+  <footer>
+    &copy; 2025 YourCompanyName. All rights reserved.
+  </footer>
+
+</body>
+</html>
